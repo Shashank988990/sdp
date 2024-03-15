@@ -89,5 +89,4 @@ def predict():
     return render_template('index.html', email=session['email'], tweet_text=tweet_text,
                            predicted_likes=predicted_likes, image_path=image_path, tweet_info=tweet_info)
 
-if __name__ == '__main__':
-    app.run(debug=True)
+
