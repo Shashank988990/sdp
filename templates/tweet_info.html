@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tweet Information</title>
+    <style>
+        body {
+            background-color: #f0f0f0; /* Light gray background color */
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .tweet-info {
+            background-color: #fff; /* White background color for tweet information */
+            border-radius: 8px; /* Rounded corners for tweet information box */
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect for tweet information box */
+        }
+        h1 {
+            color: #333; /* Dark gray color for headings */
+        }
+        p {
+            color: #666; /* Medium gray color for text */
+        }
+        img {
+            max-width: 100%; /* Ensure images don't exceed container width */
+            border-radius: 8px; /* Rounded corners for images */
+            margin-top: 10px; /* Add some margin to the top of the image */
+        }
+    </style>
+</head>
+<body>
+    <div class="tweet-info">
+        <h1>Tweet Information</h1>
+        <p><strong>Text:</strong> {{ tweet_text }}</p>
+        <p><strong>Likes:</strong> {{ likes }}</p>
+        <img src="{{ image_path }}" alt="Tweet Image">
+        <p><strong>Info:</strong> {{ tweet_info }}</p>
+    </div>
+</body>
+</html>

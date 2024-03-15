@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict Your Tweet</title>
+    <style>
+        body {
+            background-image: url('/static/background.jpg'); /* Adjust the path to your background image */
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            color: red; /* Set text color to red */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; /* Set the height of the body to the full viewport height */
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: blue; /* Set heading color to blue */
+        }
+        .orange {
+            color: orange; /* Set text color to green */
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Predict Your Tweet</h1>
+        <!-- Add your tweet prediction form and results display here -->
+        <form action="/predict" method="post">
+            <input type="text" name="tweet_text" placeholder="Enter your tweet">
+            <button type="submit">Predict</button>
+        </form>
+        {% if error_message %}
+            <p style="color: red;">{{ error_message }}</p>
+        {% endif %}
+        {% if predicted_likes is not none %}
+            <p class="green">Input Tweet: '{{ tweet_text }}'</p>
+            <p class="green">Predicted likes: {{ predicted_likes }}</p>
+            <img src="{{ image_path }}" alt="Tweet Image" width="200px"> <!-- Display image -->
+            <p class="green">Info: {{ tweet_info }}</p> <!-- Display tweet info -->
+        {% endif %}
+    </div>
+</body>
+</html>
